@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display: flex | Learn CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>display:flex</h1>
+    <div class="main-container">
+      <span id="container-width"></span>
+      <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+      <span id="container-height"></span>
+      <div class="controls">
+        <div class="interaction input">
+          <form class="tooltip">
+            <fieldset class="slider-container">
+              <legend>Nº of boxes:</legend>
+              <label class="label label-number" for="box-count"
+                >Input a number</label
+              ><br />
+              <input type="number" id="box-count" min="1" max="500" />
+              <input
+                type="button"
+                id="create-boxes"
+                value="Create"
+                class="tooltip"
+              />
+            </fieldset>
+            <span class="tooltiptext"
+              >Enter the number of boxes to show in the container</span
+            >
+          </form>
+        </div>
+        <div class="interaction slider">
+          <form class="tooltip">
+            <fieldset class="size-input-container">
+              <legend>Box size:</legend>
+              <span class="tooltiptext">Adjust the size of each box</span>
+              <label class="label label-slider" for="slider">Select size:</label
+              ><br />
+              <input
+                type="range"
+                id="slider"
+                min="50"
+                max="300"
+                value="100"
+                step="10"
+              />
+              <label id="slider-value">100px</label>
+            </fieldset>
+          </form>
+        </div>
+        <div class="interaction gap-control">
+          <form class="tooltip">
+            <fieldset>
+              <legend>Gap control</legend>
+              <span class="tooltiptext">Adjust the gap between boxes</span>
+              <label class="label label-gap">Gap</label><br />
+              <input
+                type="button"
+                id="decrease-gap"
+                value="-"
+                class="tooltip"
+              />
+              <input
+                type="button"
+                id="increase-gap"
+                value="+"
+                class="tooltip"
+              />
+              <label id="gap-value">3px</label>
+            </fieldset>
+          </form>
+        </div>
+        <div class="interaction wrapping">
+          <form>
+            <fieldset class="flex-wrap-radios">
+              <legend>Flex Wrap</legend>
+              <label
+                ><input
+                  type="radio"
+                  name="flex-wrap"
+                  value="nowrap"
+                />nowrap</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="flex-wrap"
+                  value="wrap"
+                  checked
+                />wrap</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="flex-wrap"
+                  value="wrap-reverse"
+                />wrap-reverse</label
+              >
+            </fieldset>
+          </form>
+        </div>
+        <div class="interaction content">
+          <form>
+            <fieldset class="justify-content-radios">
+              <legend>Justify Content</legend>
+              <label
+              ><input
+              type="radio"
+              name="justify-content"
+              value="flex-start"
+              checked
+              />flex-start</label
+              >
+              <label
+              ><input
+              type="radio"
+              name="justify-content"
+              value="flex-end"
+              />flex-end</label
+              >
+              <label
+              ><input
+              type="radio"
+              name="justify-content"
+              value="center"
+              />center</label
+              >
+              <label
+              ><input
+              type="radio"
+                  name="justify-content"
+                  value="space-between"
+                />space-between</label
+                >
+                <label
+                ><input
+                type="radio"
+                name="justify-content"
+                value="space-around"
+                />space-around</label
+                >
+              </fieldset>
+            </form>
+          </div>
+          <div class="interaction content">
+            <form>
+              <fieldset class="align-content-radios">
+                <legend>Align Content</legend>
+                <label>
+                  <input
+                  type="radio"
+                  name="align-content"
+                  value="flex-start"
+                  checked
+                  />
+                  flex-start
+                </label>
+                <label>
+                  <input type="radio" name="align-content" value="flex-end" />
+                  flex-end
+                </label>
+                <label>
+                  <input type="radio" name="align-content" value="center" />
+                  center
+              </label>
+              <label>
+                <input
+                type="radio"
+                name="align-content"
+                value="space-between"
+                />
+                space-between
+              </label>
+              <label>
+                <input type="radio" name="align-content" value="space-around" />
+                space-around
+              </label>
+            </fieldset>
+          </form>
+        </div>
+        <div class="interaction direction">
+          <form>
+            <fieldset class="direction-radios">
+              <legend>Direction</legend>
+              <label for="flex-direction-row">
+                <input
+                  type="radio"
+                  id="flex-direction-row"
+                  name="flex-direction"
+                  value="row"
+                  checked
+                />
+                row
+              </label>
+              <label for="flex-direction-row-reverse">
+                <input
+                  type="radio"
+                  id="flex-direction-row-reverse"
+                  name="flex-direction"
+                  value="row-reverse"
+                />
+                row-reverse
+              </label>
+              <label for="flex-direction-column">
+                <input
+                  type="radio"
+                  id="flex-direction-column"
+                  name="flex-direction"
+                  value="column"
+                />
+                column
+              </label>
+              <label for="flex-direction-column-reverse">
+                <input
+                  type="radio"
+                  id="flex-direction-column-reverse"
+                  name="flex-direction"
+                  value="column-reverse"
+                />
+                column-reverse
+              </label>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

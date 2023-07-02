@@ -1,0 +1,224 @@
+body {
+  overflow: auto;
+}
+h1 {
+  text-align: center;
+}
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  height: 40vh;
+  width: 95vw;
+  border: 1px solid rgb(0, 0, 0);
+  margin-left: 15px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  padding: 0.3rem;
+}
+
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(0, 0, 0);
+  box-sizing: content-box;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px rgb(15, 2, 2), 0 0 1em rgb(33, 33, 36),
+    0 0 0.2em blue;
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.13);
+  transition: 500ms ease;
+}
+.box:before {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  content: "";
+  background: #ffffff;
+  top: -2px;
+  left: -2px;
+  transition: 100ms width ease 300ms;
+  -web-kit-transition: 100ms width ease 300ms;
+}
+.box:after {
+  position: absolute;
+  width: 2px;
+  height: 0;
+  content: "";
+  background: #ffffff;
+  top: -2px;
+  right: -2px;
+  transition: 100ms height ease 200ms;
+  -web-kit-transition: 100ms height ease 200ms;
+}
+.box-inner:after {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  content: "";
+  background: #ffffff;
+  bottom: -2px;
+  right: -2px;
+  transition: 300ms width ease 350ms;
+  -web-kit-transition: 100ms width ease 100ms;
+}
+.box-inner:before {
+  position: absolute;
+  width: 2px;
+  height: 0;
+  content: "";
+  background: #ffffff;
+  bottom: -2px;
+  left: -2px;
+  transition: 100ms height ease 0ms;
+  -web-kit-transition: 100ms height ease 0ms;
+}
+.box:hover {
+  border-color: transparent;
+  background: #0f2834;
+}
+.box:hover:before {
+  width: 100%;
+  transition: 600ms width ease 0ms;
+  -web-kit-transition: 100ms width ease 0ms;
+}
+.box:hover:after {
+  height: 102%;
+  transition: 100ms height ease 100ms;
+  -web-kit-transition: 100ms height ease 100ms;
+}
+.box:hover .box-inner:after {
+  width: 98%;
+  transition: 100ms width ease 400ms;
+  -web-kit-transition: 100ms width ease 700ms;
+}
+.box:hover .box-inner:before {
+  height: 95%;
+  transition: 500ms height ease 300ms;
+  -web-kit-transition: 100ms height ease 300ms;
+}
+
+.interaction {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  gap: 3%;
+  margin: 10px 8px;
+  max-width: 230px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #ff3a20;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.label {
+  line-height: 2;
+}
+
+.wrapping,
+.direction,
+.content {
+  min-width: 220px;
+}
+
+fieldset {
+  border: 3px solid rgb(156, 31, 0);
+  border-radius: 10px;
+}
+
+.direction-radios,
+.justify-content-radios,
+.flex-wrap-radios,
+.align-content-radios {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#container-width {
+  position: absolute;
+  top: 63px;
+  left: 40px;
+}
+
+#container-height {
+  position: absolute;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-top: 20px;
+  left: 0.3vw;
+}
+
+@media (min-width: 955px) {
+  .main-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container {
+    width: 55%;
+    height: 75vh;
+  }
+
+  .controls {
+    margin-left: 1%;
+    width: 39%;
+  }
+  .slider-container {
+    min-width: 150px;
+  }
+  #slider-value {
+    display: inline;
+  }
+}
+@media (min-width: 1346px) {
+  .controls {
+    flex-direction: row;
+    align-content: start;
+  }
+}
